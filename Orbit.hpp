@@ -29,11 +29,11 @@ public:
     
     Object addBodies(long double mass, long double xPos, long double yPos, long double xVel, long double yVel, long double radius);
     
-    Object addBodiesPolar(long double mass, long double radius, long double posAngle, long double vel, long double velAngle, long double r);
+    Object addBodiesPolar(long double mass, long double distance, long double posAngle, long double vel, long double velAngle, long double radius);
     
     void addMoon(const Object& planet, long double mass, long double distance, long double vel, long double radius);
     
-    Object addBodiesPolarRand(long double mass, long double radius, long double vel, long double size);
+    Object addBodiesPolarRand(long double mass, long double distance, long double vel, long double radius);
     
     void setTimeStep(int dt);
     

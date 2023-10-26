@@ -23,14 +23,14 @@ Object Orbit::addBodies(long double mass, long double xPos, long double yPos, lo
     return temp;
 }
 
-Object Orbit::addBodiesPolar(long double mass, long double radius, long double posAngle, long double vel, long double velAngle, long double r){
+Object Orbit::addBodiesPolar(long double mass, long double distance, long double posAngle, long double vel, long double velAngle, long double radius){
     Object temp;
     temp.mass = mass;
-    temp.pos.x = radius * cos(posAngle);
-    temp.pos.y = radius * sin(posAngle);
+    temp.pos.x = distance * cos(posAngle);
+    temp.pos.y = distance * sin(posAngle);
     temp.vel.x = vel * cos(velAngle);
     temp.vel.y = vel * sin(velAngle);
-    temp.radius = r;
+    temp.radius = radius;
     temp.objectCount = objectCount;
     objectList.addObject(temp);
     objectCount++;
@@ -50,7 +50,7 @@ void Orbit::addMoon(const Object& planet, long double mass, long double distance
     objectCount++;
 }
 
-Object Orbit::addBodiesPolarRand(long double mass, long double radius, long double vel, long double size){
+Object Orbit::addBodiesPolarRand(long double mass, long double distance, long double vel, long double radius){
     Object temp;
     double posAngle;
     double velAngle;
@@ -58,11 +58,11 @@ Object Orbit::addBodiesPolarRand(long double mass, long double radius, long doub
     posAngle = posAngle * 180 / 3.142;
     velAngle = (posAngle - 3.142/2);
     temp.mass = mass;
-    temp.pos.x = radius * cos(posAngle);
-    temp.pos.y = radius * sin(posAngle);
+    temp.pos.x = distance * cos(posAngle);
+    temp.pos.y = distance * sin(posAngle);
     temp.vel.x = (vel * cos(velAngle));
     temp.vel.y = (vel * sin(velAngle));
-    temp.radius = size;
+    temp.radius = radius;
     temp.objectCount = objectCount;
     objectList.addObject(temp);
     objectCount++;

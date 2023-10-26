@@ -28,6 +28,7 @@ private:
     bool isPressed = false;
     bool tracking = false;
     int trackedObject;
+    int minObjectSize = 1;
 public:
     Render() = default;
     
@@ -44,6 +45,8 @@ public:
     void changeScale(int distance, Vector2 mousePos);
     
     void setCenter(Vector2 point);
+    
+    void setMinObjectSize(int newSize);
     
     void renderObjects(const Object& object,sf::RenderWindow(&window));
 };

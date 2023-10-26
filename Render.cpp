@@ -79,12 +79,16 @@ void Render::setCenter(Vector2 point){
     center.y = point.y;
 }
 
+void Render::setMinObjectSize(int newSize){
+    minObjectSize = newSize;
+}
+
 void Render::renderObjects(const Object& object,sf::RenderWindow(&window)){
     int size;
     sf::CircleShape circle;
     size = object.radius / scale;
-    if (size < 1){
-        size = 1;
+    if (size < minObjectSize){
+        size = minObjectSize;
     }
     sf::Vector2f circlePosition((object.pos.x / scale + (windowSize.x/2 - size)) - (center.x / scale ),(object.pos.y / scale + (windowSize.y/2 - size)) - (center.y  / scale));
     circle.setPosition(circlePosition);
