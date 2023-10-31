@@ -9,12 +9,12 @@
 #ifndef Orbit_hpp
 #define Orbit_hpp
 
-#include "Orbit.hpp"
+#include "ObjectManager.hpp"
 #include "Render.hpp"
 #include "ButtonPress.h"
 #include "ObjectList.hpp"
 
-class Orbit: public Render {
+class ObjectManager: public Render {
 private:
     ObjectList objectList;
     sf::Event event;
@@ -25,7 +25,7 @@ private:
     sf::CircleShape circle;
     int objectCount = 0;
 public:
-    Orbit() = default;
+    ObjectManager() = default;
     
     Object addBodies(long double mass, long double xPos, long double yPos, long double xVel, long double yVel, long double radius);
     

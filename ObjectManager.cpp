@@ -7,9 +7,9 @@
 //
 
 #include <math.h>
-#include "Orbit.hpp"
+#include "ObjectManager.hpp"
 
-Object Orbit::addBodies(long double mass, long double xPos, long double yPos, long double xVel, long double yVel, long double radius){
+Object ObjectManager::addBodies(long double mass, long double xPos, long double yPos, long double xVel, long double yVel, long double radius){
     Object temp;
     temp.mass = mass;
     temp.pos.x = xPos;
@@ -23,7 +23,7 @@ Object Orbit::addBodies(long double mass, long double xPos, long double yPos, lo
     return temp;
 }
 
-Object Orbit::addBodiesPolar(long double mass, long double distance, long double posAngle, long double vel, long double velAngle, long double radius){
+Object ObjectManager::addBodiesPolar(long double mass, long double distance, long double posAngle, long double vel, long double velAngle, long double radius){
     Object temp;
     temp.mass = mass;
     temp.pos.x = distance * cos(posAngle);
@@ -37,7 +37,7 @@ Object Orbit::addBodiesPolar(long double mass, long double distance, long double
     return temp;
 }
 
-void Orbit::addMoon(const Object& planet, long double mass, long double distance, long double vel, long double radius){
+void ObjectManager::addMoon(const Object& planet, long double mass, long double distance, long double vel, long double radius){
     Object temp;
     temp.mass = mass;
     temp.pos.x = planet.pos.x + distance;
@@ -50,7 +50,7 @@ void Orbit::addMoon(const Object& planet, long double mass, long double distance
     objectCount++;
 }
 
-Object Orbit::addBodiesPolarRand(long double mass, long double distance, long double vel, long double radius){
+Object ObjectManager::addBodiesPolarRand(long double mass, long double distance, long double vel, long double radius){
     Object temp;
     double posAngle;
     double velAngle;
@@ -69,7 +69,7 @@ Object Orbit::addBodiesPolarRand(long double mass, long double distance, long do
     return temp;
 }
 
-void Orbit::update(){
+void ObjectManager::update(){
     Vector2 temp;
     temp.x = 0;
     temp.y = 0;
@@ -87,7 +87,7 @@ void Orbit::update(){
     }
 }
 
-void Orbit::setTimeStep(int dt){
+void ObjectManager::setTimeStep(int dt){
     for (int i = 0; i < objectList.objectList.size(); ++i){
         objectList.objectList[i].dt = dt;
     }

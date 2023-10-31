@@ -10,12 +10,12 @@
 #define OrbitLoop_hpp
 
 #include <SFML/Graphics.hpp>
-#include "Orbit.hpp"
+#include "ObjectManager.hpp"
 #include "Object.hpp"
 #include "ObjectList.hpp"
 #include "Vector2.h"
 
-class Simulation: public Orbit {
+class Simulation: public ObjectManager {
 private:
     Vector2 center;
     Vector2 windowSize;
@@ -23,10 +23,11 @@ private:
     ButtonPress buttonPress;
     sf::Vector2i mousePosition;
     sf::Event event;
-    Orbit orbit;
+    ObjectManager orbit;
     ObjectList objectList;
     
     sf::RenderWindow window;
+    
 public:
     Simulation();
     
