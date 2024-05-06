@@ -17,6 +17,10 @@
 
 class ObjectManager: public Render {
 private:
+    double timeStep = 10;
+    int trailWidth = 0;
+    int trailLength = 0;
+    bool doCollisions = true;
     ObjectList objectList;
     sf::Event event;
     Vector2 mouseDistance;
@@ -45,7 +49,11 @@ public:
     Object addBodiesPolarRand(long double mass, long double distance, long double vel, long double radius, sf::Color color);
     
     void setTimeStep(double dt);
+
+    void setObjectTrail(int width, int length);
     
+    void setCollisions(bool doCollisions);
+
     void update();
 };
 

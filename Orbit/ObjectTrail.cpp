@@ -9,7 +9,7 @@ void ObjectTrail::setColor(const sf::Color& color)
 	this->color = color;
 }
 
-void ObjectTrail::setObjectTrail(int width, int length) {
+void ObjectTrail::setTrailSize(int width, int length) {
 	if (width >= 0 && length >= 0) {
 		this->lineWidth = width;
 		this->maxVertexCount = length;

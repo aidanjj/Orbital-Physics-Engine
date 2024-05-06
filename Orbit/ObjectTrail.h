@@ -12,7 +12,7 @@ public:
 
 	sf::VertexArray trail;
 
-	void setObjectTrail(int width, int length);
+	void setTrailSize(int width, int length);
 
 	void addPoint(double x, double y);
 
